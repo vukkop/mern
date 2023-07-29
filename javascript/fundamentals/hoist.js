@@ -1,6 +1,10 @@
 console.log(hello);
 var hello = "world";
 
+// var hello;
+// logs undefined
+// hello= "world"
+
 var needle = "haystack";
 test();
 function test() {
@@ -8,12 +12,30 @@ function test() {
   console.log(needle);
 }
 
+// var needle
+// function test() {
+//   var neddle
+//   neddle = "magnet"
+//   logs "magnet"
+// }
+// needle = "haystack"
+// test() test is called, the first console.log runs "magnet"
+
 var brendan = "super cool";
 function print() {
   brendan = "only okay";
   console.log(brendan);
 }
 console.log(brendan);
+
+// var brendan
+// function print() {
+//   var brendan
+//   brendan = "only okay";
+//   logs "only okay"
+// }
+// brendan = "super cool"
+// console.log runs and logs "super cool"
 
 var food = "chicken";
 console.log(food);
@@ -23,6 +45,16 @@ function eat() {
   console.log(food);
   var food = "gone";
 }
+
+// var food
+// function eat() {
+//   var food
+//   food = "half-chicken"
+//   logs "half-chicken"
+//   food = "gone"
+// }
+// food = "chicken";
+// console.log runs and logs "chicken"
 
 mean();
 console.log(food);
