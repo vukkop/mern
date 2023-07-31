@@ -66,6 +66,18 @@ var mean = function () {
 };
 console.log(food);
 
+// var mean  Declaration of the variable 'mean'
+//mean()  mean is not a function, 'mean' is still undefined at this point
+// console.log(food) food is not defined, the variable 'food' is also undefined at this point
+//mean = function () {
+//   var food
+//   food = "chicken"
+//   console.log(food) Logs "chicken"
+//   food = "fish"  Assignment of the value "fish" to the variable 'food'
+//   console.log(food)  Logs "fish"
+//}
+//console.log(food) food is not defined, the variable 'food' is in scope of the function
+
 console.log(genre);
 var genre = "disco";
 rewind();
