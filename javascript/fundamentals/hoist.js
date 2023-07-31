@@ -66,7 +66,7 @@ var mean = function () {
 };
 console.log(food);
 
-// var mean  Declaration of the variable 'mean'
+// var mean
 //mean()  mean is not a function, 'mean' is still undefined at this point
 // console.log(food) food is not defined, the variable 'food' is also undefined at this point
 //mean = function () {
@@ -89,6 +89,20 @@ function rewind() {
 }
 console.log(genre);
 
+//var genre
+//console.log(genre) Logs 'undefined' as the variable 'genre' has been declared but not yet assigned a value
+//genre = "disco"
+//rewind() Function call to 'rewind'
+
+//function rewind() {
+//    var genre
+//    genre = "rock"
+//    console.log(genre) Logs "rock"
+//    genre = "r&b"
+//    console.log(genre) Logs "r&b"
+//}
+//console.log(genre) Logs "disco" as it is referring to the global variable 'genre'
+
 dojo = "san jose";
 console.log(dojo);
 learn();
@@ -99,6 +113,19 @@ function learn() {
   console.log(dojo);
 }
 console.log(dojo);
+
+//var dojo
+//dojo = "san jose"
+//console.log(dojo)  Logs "san jose"
+//learn()  Function call to 'learn'
+//function learn() {
+//    var dojo
+//    dojo = "seattle"
+//    console.log(dojo)  Logs "seattle"
+//    dojo = "burbank"
+//    console.log(dojo)  Logs "burbank"
+//}
+//console.log(dojo)  Logs "san jose"
 
 console.log(makeDojo("Chicago", 65));
 console.log(makeDojo("Berkeley", 0));
@@ -113,3 +140,32 @@ function makeDojo(name, students) {
   }
   return dojo;
 }
+
+//function makeDojo(name, students) {
+//    const dojo
+//    dojo = {}
+//    dojo.name = name
+//    dojo.students = students
+
+//    if (dojo.students > 50) {
+//        dojo.hiring = true;
+//    } else if (dojo.students <= 0) {
+//        dojo = "closed for now" Trying to assign a new value to the constant 'dojo', you cannot reassign a new value to a constant variable.
+//    }
+//    return dojo Return the 'dojo' object
+//}
+
+//console.log(makeDojo("Chicago", 65))
+//Logs
+//{
+//  name: "Chicago",
+//  students: 65,
+//  hiring: true
+//}
+
+//console.log(makeDojo("Berkeley", 0))
+//Logs
+//{
+//  name: "Berkeley",
+//  students: 0
+//}
