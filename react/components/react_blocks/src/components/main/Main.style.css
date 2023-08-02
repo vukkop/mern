@@ -1,0 +1,9 @@
+.Main {
+  background-color: #e06666;
+  flex: 3;
+  height: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
