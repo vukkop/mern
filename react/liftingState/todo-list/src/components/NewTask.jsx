@@ -1,24 +1,18 @@
 import React from 'react'
 import { useState } from 'react'
 
-const NewTask = (props) => {
+const NewTask = ({ onCreate }) => {
   const [task, setTask] = useState("")
-  const [completed, setCompleted] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const inputValue = {
       task: e.target.task.value,
-      completed: completed
+      completed: false
     }
-    props.onCreate(inputValue)
-
+    onCreate(inputValue)
     setTask("")
   }
-
-
-
 
   return (
     <div className='container mt-5'>
