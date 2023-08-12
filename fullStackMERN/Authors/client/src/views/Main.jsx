@@ -14,7 +14,7 @@ const Main = () => {
   }
 
   const removeOne = (id) => {
-    setProductList((current) => current.filter(el => el._id !== id))
+    setList((current) => current.filter(el => el._id !== id))
   }
 
   const getList = () => {
@@ -28,6 +28,7 @@ const Main = () => {
 
   return (
     <div>
+      <h1>Main</h1>
       {/* <ProductForm onCreate={addNew} />
       <ProductList list={list} onDelete={removeOne} /> */}
     </div>

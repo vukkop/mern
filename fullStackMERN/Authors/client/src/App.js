@@ -1,7 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Main from "./views/Main";
-import SinglePorduct from "./views/SinglePorduct";
 
 function App() {
   return (
