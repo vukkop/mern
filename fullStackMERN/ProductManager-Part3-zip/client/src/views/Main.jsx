@@ -16,7 +16,7 @@ const Main = () => {
   }
 
   const removeProduct = (id) => {
-    setProductList((current) => current.filter(el => el._id !== id))
+    setProductList((current) => current.filter(el => el._id != id))
   }
 
   const getList = () => {

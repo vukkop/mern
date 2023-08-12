@@ -39,7 +39,8 @@ const ProductDetails = (props) => {
   }
 
   const deleteProduct = (id) => {
-    deleteOne(id)
+    const res = deleteOne(id)
+
   }
 
   return (

@@ -8,7 +8,6 @@ function App() {
     <div className="App container">
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/product/:id" element={<SinglePorduct />} />
       </Routes>
     </div>
   );
