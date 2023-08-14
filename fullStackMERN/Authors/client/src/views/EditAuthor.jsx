@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../components/Header'
-import { useNavigate, useParams, Link } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
-import { Alert, AlertTitle, TextField } from '@mui/material'
+import { Alert, AlertTitle } from '@mui/material'
+import AuthorForm from '../components/AuthorForm'
 
 const EditAuthor = () => {
   const [author, setAuthor] = useState({ name: '' })
+  const [loaded, setLoaded] = useState(false);
   const [errors, setErrors] = useState([]);
   const { id } = useParams()
   const navigate = useNavigate()
@@ -19,16 +21,12 @@ const EditAuthor = () => {
       .get(`http://localhost:8000/api/authors/${id}`)
       .then((res) => {
         setAuthor(res.data)
+        setLoaded(true);
       })
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const inputValue = {
-      name: e.target.name.value,
-    }
-
-    axios.put(`http://localhost:8000/api/authors/${id}`, inputValue)
+  const updateAuthor = (author) => {
+    axios.put(`http://localhost:8000/api/authors/${id}`, author)
       .then(() => {
         navigate('/')
       })
@@ -39,10 +37,10 @@ const EditAuthor = () => {
           errorArr.push(errorResponse[key].message)
         }
         setErrors(errorArr)
-        if (errors.length > 0) {
+        if (errorArr.length > 0) {
           setTimeout(() => {
             setErrors([]);
-          }, 5000);
+          }, 4000);
         }
       })
   }
@@ -52,26 +50,13 @@ const EditAuthor = () => {
       <Header />
       <h4>Edit This Author:</h4>
 
-      <form onSubmit={handleSubmit}>
-        <div className="card">
-          <div className="card-body">
-            <div>
-              <TextField
-                id='name'
-                name='name'
-                label="Name"
-                onChange={(e) => {
-                  setAuthor({ name: e.target.value })
-                }}
-                value={author.name}
-                className='mb-2'
-              />
-            </div>
-            <Link to={'/'} className="btn btn-secondary"> Cancel</Link>
-            <button type='submit' className="btn btn-primary ms-2"> Submit</button>
-          </div>
-        </div>
-      </form>
+      {loaded && (
+        <AuthorForm
+          onSubmitProp={updateAuthor}
+          initialName={author.name}
+        />
+      )}
+
       {
         errors.length > 0
         && <Alert className='w-50 float-end mt-3' severity="error">
