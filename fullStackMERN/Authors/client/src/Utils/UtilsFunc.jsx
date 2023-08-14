@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const deleteById = (id) => {
   axios
-    .delete(`http://localhost:8000/api/products/${id}`)
+    .delete(`http://localhost:8000/api/authors/${id}`)
     .then((res) => {
       // console.log(res);
       return res;
